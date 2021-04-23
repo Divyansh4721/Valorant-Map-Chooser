@@ -1,0 +1,41 @@
+function RandomMap() {
+  return Math.floor(Math.random() * 5);
+}
+let interval;
+let flag=true;
+function buttonclicked(){
+  if(flag){
+    let Mapno=RandomMap();
+    let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
+    clearInterval(interval);
+    document.querySelector('#Valo').innerHTML=MapNames[Mapno];
+    flag=false;
+  }
+}
+{
+  let a=document.querySelector('#button');
+  a.addEventListener('mousedown', function() {
+    a.style.height='40px';
+    a.style.width='14%';
+    a.style.left='75%';
+    a.style.fontSize='17px';
+  });
+  a.addEventListener('mouseup', function() {
+    a.style.height='50px';
+    a.style.width='15%';
+    a.style.left='75%';
+    a.style.fontSize='20px';
+  });
+}
+{
+  let temp=-1;
+  let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
+  interval=setInterval(function(){
+    let Mapno=RandomMap();
+    while (temp==Mapno) {
+      Mapno=RandomMap();
+    }
+    temp=Mapno;
+    document.querySelector('#Valo').innerHTML=MapNames[Mapno];
+  },200);
+}
