@@ -8,7 +8,7 @@ function buttonclicked(){
     let Mapno=RandomMap();
     let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
     clearInterval(interval);
-    document.querySelector('#Valo').innerHTML=MapNames[Mapno];
+    setTimeout(()=>{document.querySelector('#Valo').innerHTML=MapNames[Mapno];},200);
     flag=false;
   }
 }
