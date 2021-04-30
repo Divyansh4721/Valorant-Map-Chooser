@@ -3,12 +3,18 @@ function RandomMap() {
 }
 let interval;
 let flag=true;
+let audio=new Audio("sound.wav");
 function buttonclicked(){
   if(flag){
     let Mapno=RandomMap();
     let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
-    clearInterval(interval);
-    setTimeout(()=>{document.querySelector('#Valo').innerHTML=MapNames[Mapno];},200);
+    audio.play();
+    setTimeout(()=>{
+      clearInterval(interval);
+      setTimeout(()=>{
+        document.querySelector('#Valo').innerHTML=MapNames[Mapno];
+      },200);
+    },500);
     flag=false;
   }
 }
