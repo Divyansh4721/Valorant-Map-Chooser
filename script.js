@@ -1,5 +1,5 @@
 function RandomMap() {
-  return Math.floor(Math.random() * 5);
+  return Math.floor(Math.random() * 7);
 }
 let interval;
 let flag=true;
@@ -7,7 +7,7 @@ let audio=new Audio("sound.wav");
 function buttonclicked(){
   if(flag){
     let Mapno=RandomMap();
-    let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
+    let MapNames=["Bind","Haven","IceBox","Split","Ascent","Breeze","Fracture"];
     audio.play();
     setTimeout(()=>{
       clearInterval(interval);
@@ -35,7 +35,7 @@ function buttonclicked(){
 }
 {
   let temp=-1;
-  let MapNames=["Bind","Haven","IceBox","Split","Ascent"];
+  let MapNames=["Bind","Haven","IceBox","Split","Ascent","Breeze","Fracture"];
   interval=setInterval(function(){
     let Mapno=RandomMap();
     while (temp==Mapno) {
